@@ -1,0 +1,22 @@
+{
+  "name": "AppInstaller",
+  "title": "",
+  "version": "1.0.0",
+  "description": "",
+  "company": "",
+  "copyright": "",
+  "icon": "icon.png",
+  "startup": "app_installer.py",
+  "startupForm": "",
+  "interpreter": "/usr/bin/python3",
+  "args": "",
+  "workingDir": "",
+  "env": "",
+  "publishSingleFile": false,
+  "publishDeb": true,
+  "external": true,
+  "settings": [],
+  "saveSettingsOnExit": true,
+  "resources": [],
+  "references": []
+}

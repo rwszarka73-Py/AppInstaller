@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>404</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Portable Application Installer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string>QMainWindow, QWidget#centralwidget { background-color: #1e2430; }
+QLabel { color: #d8dee9; background: transparent; }
+QLabel#titleLabel { color: #ffffff; font-size: 16pt; font-weight: 600; }
+QLabel#subtitleLabel { color: #8b95a7; }
+QLabel#label_2, QLabel#label_3 { color: #8b95a7; }
+QGroupBox { background-color: #262d3b; border: 1px solid #343d4f; border-radius: 8px; margin-top: 10px; color: #e5e9f0; font-weight: 600; }
+QGroupBox::title { subcontrol-origin: margin; left: 12px; padding: 0 6px; }
+QLineEdit { background-color: #1a1f29; border: 1px solid #3b4558; border-radius: 6px; padding: 0 8px; color: #e5e9f0; selection-background-color: #3b82f6; }
+QLineEdit:focus { border-color: #3b82f6; }
+QPushButton { background-color: #323b4d; color: #e5e9f0; border: 1px solid #445066; border-radius: 6px; font-weight: normal; }
+QPushButton:hover { background-color: #3b4659; }
+QPushButton:pressed { background-color: #2a3242; }
+QPushButton#installButton { background-color: #3b82f6; border: none; color: #ffffff; font-weight: 600; }
+QPushButton#installButton:hover { background-color: #4f91f7; }
+QPushButton#installButton:pressed { background-color: #2f6fd8; }
+QLabel#iconPreview { background-color: #1a1f29; border: 1px dashed #3b4558; border-radius: 6px; color: #5c677a; }
+QLabel#statusLabel { background-color: #262d3b; border: 1px solid #343d4f; border-radius: 6px; padding: 0 12px; }
+QLabel#statusLabel[state="ok"] { background-color: #1f3a2c; border-color: #2f5a42; color: #8fdfaa; }
+QLabel#statusLabel[state="error"] { background-color: #3d2328; border-color: #6b3540; color: #f2a3ad; }</string>
+  </property>
+  <property name="startPosition" stdset="0">
+   <string>CenterScreen</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="designSize" stdset="0">
+    <string>640,400</string>
+   </property>
+   <widget class="QLabel" name="titleLabel">
+    <property name="geometry">
+     <rect>
+      <x>24</x>
+      <y>16</y>
+      <width>592</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Portable Application Installer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="subtitleLabel">
+    <property name="geometry">
+     <rect>
+      <x>24</x>
+      <y>48</y>
+      <width>592</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Adds a portable app to your applications menu and desktop.</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="exeGroup">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>600</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Executable</string>
+    </property>
+    <property name="designSize" stdset="0">
+     <string>600,100</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>16</x>
+       <y>30</y>
+       <width>568</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>The program to launch. Its whole folder is copied to ~/.local/share.</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="exeLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>16</x>
+       <y>56</y>
+       <width>460</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>No executable selected</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exeButton">
+     <property name="geometry">
+      <rect>
+       <x>484</x>
+       <y>56</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse…</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="iconGroup">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>192</y>
+      <width>600</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Shortcut Icon</string>
+    </property>
+    <property name="designSize" stdset="0">
+     <string>600,100</string>
+    </property>
+    <widget class="QLabel" name="iconPreview">
+     <property name="geometry">
+      <rect>
+       <x>16</x>
+       <y>32</y>
+       <width>54</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Icon</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>84</x>
+       <y>30</y>
+       <width>500</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Shown in the app menu and on the desktop.</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="iconLineEdit">
+     <property name="geometry">
+      <rect>
+       <x>84</x>
+       <y>56</y>
+       <width>392</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>No icon selected</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="iconButton">
+     <property name="geometry">
+      <rect>
+       <x>484</x>
+       <y>56</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse…</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="statusLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>306</y>
+      <width>600</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Status</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="installButton">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>352</y>
+      <width>120</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Install</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources />
+ <connections />
+</ui>
